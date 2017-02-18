@@ -1,0 +1,26 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Bamazon",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwahlers/bamazon.git"
+  },
+  "keywords": [
+    "Bamazon"
+  ],
+  "author": "Chris Wahlers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwahlers/bamazon/issues"
+  },
+  "homepage": "https://github.com/cwahlers/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.0.1",
+    "mysql": "^2.13.0"
+  }
+}
