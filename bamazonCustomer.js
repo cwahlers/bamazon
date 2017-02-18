@@ -44,13 +44,6 @@ function askCustomer(){
         console.log('  ' + products[num-1].id + ' - ' + products[num-1].product_name + '  $' + products[num-1].price );
         console.log("************************************");
 
-      //if (data.guess != 'no') {
-          //if( wordObject.updateLetter(data.guess) ) tries--;
-
-          //console.log(wordObject.display());
-
-          //askLetter();
-       //}
       inquirer.prompt([
       {
       type: "input",
@@ -59,35 +52,9 @@ function askCustomer(){
       ]).then(function(data){
           console.log("The quantity is: " + data.qty);
           if (data.qty != 0){
-            //console.log("Thank you for your order");
             checkInventory(num, data.qty);
-            // // Place another order
-            // inquirer.prompt([
-            //   {
-            //   type: "input",
-            //   name: "add",
-            //   message: "Would you like to place another order (yes): "},
-            //   ]).then(function(data){
-            //     if (data.add == "yes"){
-            //       askCustomer();
-            //     }else{
-            //       console.log("Thank you for ordering with Bamazon");
-            //       return;
-            //     };
-            //   });
-
-
           } else { console.log("Your order was canceled");}
-          //if (data.guess != 'no') {
-              //if( wordObject.updateLetter(data.guess) ) tries--;
-
-              //console.log(wordObject.display());
-
-              //askLetter();
-           //}
       }); // Ent Qty input
-
-
   }); // End Item input
 }
 
@@ -126,7 +93,7 @@ function checkInventory(item, qty){
 }
 
 function reduceInventory(item, qty, finalInv){
-  console.log("Item: " + item + "Qty: " + qty);
+  //console.log("Item: " + item + "Qty: " + qty);
   connection.query("UPDATE products SET stock_quantity = ? WHERE id = ?", [finalInv, item] , function(err, res) {
     if (err){
       console.log("Unable to update the Inventory");
